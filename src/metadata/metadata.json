@@ -1,0 +1,118 @@
+{
+  "package": "Vatlayer",
+  "tagline": "Vatlayer API",
+  "description": "Vatlayer",
+  "image": "http:\/\/logo.clearbit.com\/vatlayer.com",
+  "repo": "https:\/\/github.com\/RapidSoftwareSolutions\/Marketplace-Vatlayer-Package",
+  "keywords": [
+  ],
+  "accounts": {
+    "domain": "vatlayer.com",
+    "credentials": [
+      "apiKey"
+    ]
+  },
+  "blocks": [
+
+    {
+      "name": "validateVATNumber",
+      "description": "Perform VAT number validations and company information lookups",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Vatlayer",
+          "required": true
+        },
+        {
+          "name": "vatNumber",
+          "type": "String",
+          "info": "VAT number",
+          "required": true
+        }
+      ],
+      "callbacks": [{
+        "name": "error",
+        "info": "Error"
+      }, {
+        "name": "success",
+        "info": "Success"
+      }]
+    },
+    {
+      "name": "getVATRate",
+      "description": "Request VAT rates for a country of your choice.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Vatlayer",
+          "required": true
+        },
+        {
+          "name": "countryCode",
+          "type": "String",
+          "info": "Code of the country",
+          "required": true
+        }
+      ],
+      "callbacks": [{
+        "name": "error",
+        "info": "Error"
+      }, {
+        "name": "success",
+        "info": "Success"
+      }]
+    },
+    {
+      "name": "getVATRateList",
+      "description": "Request VAT rates for all 28 EU member states at once.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Vatlayer",
+          "required": true
+        }
+      ],
+      "callbacks": [{
+        "name": "error",
+        "info": "Error"
+      }, {
+        "name": "success",
+        "info": "Success"
+      }]
+    },
+    {
+      "name": "getVATPrice",
+      "description": "Request the API to calculate VAT compliant prices on your behalf.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Vatlayer",
+          "required": true
+        },
+        {
+          "name": "countryCode",
+          "type": "String",
+          "info": "Code of the country",
+          "required": true
+        },
+        {
+          "name": "amount",
+          "type": "String",
+          "info": "The amount/price you would like to calculate in compliance with EU VAT rates",
+          "required": true
+        }
+      ],
+      "callbacks": [{
+        "name": "error",
+        "info": "Error"
+      }, {
+        "name": "success",
+        "info": "Success"
+      }]
+    }
+  ]
+}
